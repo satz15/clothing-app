@@ -5,6 +5,11 @@ import './App.css'
 
 import Navbar from './components/navbar'
 import Slider from './components/slider'
+import Shoes from './components/mens-shoe'
+import Apparel from './components/apparel'
+import Category from './components/categories'
+import Login from './components/login-page'
+import Card from './components/card'
 
 
 
@@ -12,10 +17,15 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-      <div>
+      <div >
       <Navbar/>
       <Slider/>
-      </div>
+      <Shoes/>
+      <Apparel/>
+      <Category/>
+      <Login/>
+      {/* <Card/> */}
+      </div> 
   )
 }
 

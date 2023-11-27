@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.image{
+    background-image: url("./assets/images/login-image.jpg");
+}
