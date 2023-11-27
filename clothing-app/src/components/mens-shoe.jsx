@@ -19,8 +19,8 @@ const Shoes = () => {
         <h1 className="text-black text-xl font-semibold ">Mens Casuals </h1>
         <h1 className="text-xl font-semibold">View More</h1>
       </div>
-      <hr />
-      <div className="flex flex-wrap ">
+      {/* <hr /> */}
+      <div className="flex flex-wrap mx-14  ">
         {Shoe.map((item, id) => {
           return (
             <ItemShop

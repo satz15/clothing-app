@@ -29,7 +29,7 @@ const Slider = () => {
         showDots={true}
         responsive={responsive}
         infinite={true}
-        autoPlaySpeed={3000}
+        autoPlaySpeed={2000}
         autoPlay={true}
       >
         <img

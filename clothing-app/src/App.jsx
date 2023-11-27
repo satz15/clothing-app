@@ -10,6 +10,7 @@ import Apparel from './components/apparel'
 import Category from './components/categories'
 import Login from './components/login-page'
 import Card from './components/card'
+import Women from './components/womens-shoe'
 
 
 
@@ -23,8 +24,8 @@ function App() {
       <Shoes/>
       <Apparel/>
       <Category/>
-      <Login/>
-      {/* <Card/> */}
+      <Women/>
+      {/* <Login/> */}
       </div> 
   )
 }
