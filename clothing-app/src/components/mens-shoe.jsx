@@ -4,8 +4,8 @@ const Shoes = () => {
   const ItemShop = (props) => {
     return (
         
-      <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden justify-evenly">
-        <img className="w-74 h-64 object-center" src={props.image} />
+      <div className="max-w-sm mx-auto bg-white w-96 ml-10 mt-4 mb-8 flex flex-col items-center gap-4 shadow-lg rounded-lg overflow-hidden justify-evenly">
+        <img className="mt-full w-74 h-64 object-center" src={props.image} />
         <h2 className="text-xl font-semibold text-gray-800 mb-2">{props.name}</h2>
         <span className="text-xl font-semibold text-gray-800 mb-2">{props.price}</span>
         <p className="text-xl font-semibold text-gray-800 mb-2">{props.size}</p>
@@ -15,7 +15,7 @@ const Shoes = () => {
 
   return (
     <div>
-      <div className="flex justify-around ">
+      <div className="flex justify-around mt-4">
         <h1 className="text-black text-xl font-semibold ">Mens Casuals </h1>
         <h1 className="text-xl font-semibold">View More</h1>
       </div>

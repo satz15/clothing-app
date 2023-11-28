@@ -3,7 +3,7 @@ const Shoe = [
 
     {
       id: 1,
-      name: "Adidas",
+      name: "Adidas", 
       price: 'price: 2800',
       size: 'size: 8',
       imgUrl:
