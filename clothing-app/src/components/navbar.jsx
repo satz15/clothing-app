@@ -12,9 +12,9 @@ const Navbar = () => {
           <span className="cursor-pointer text-xl font-sans"><NavLink to='/men'>Men</NavLink></span>
           <span className="cursor-pointer text-xl font-sans"><NavLink to='/women'>Women</NavLink></span>
           <div className='flex h-[1.5rem] relative items-center'>
-            <input className="rounded-2xl outline-none text-black"  type='text'  
+            <input className="rounded-lg outline-none text-black"  type='text'  
              placeholder='search for you'/>
-          < HiOutlineSearch className="absolute right-5  text-black" />
+          < HiOutlineSearch className="absolute ml-40 cursor-pointer  text-black" />
           </div>
           </div>
           <div className='flex flex-row gap-3 items-center'> 
