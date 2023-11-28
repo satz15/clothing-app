@@ -37,9 +37,3 @@ const Menshirt = () => {
 }
  
 export default Menshirt;
-
-
-// );
-
-
-// export default Shirt;
