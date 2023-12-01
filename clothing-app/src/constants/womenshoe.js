@@ -22,7 +22,7 @@ const Womenshoe = [
         price: 'price: 1900',
         size: 'size: 8',
         imgUrl:
-          "https://www.luluhypermarket.in/medias/1651555-002.jpg-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wzNDQ0OTN8aW1hZ2UvanBlZ3xhRFEzTDJnNE1pODVNakk0TVRJNE56UTNOVFV3THpFMk5URTFOVFV0TURBeUxtcHdaMTh4TWpBd1YzZ3hNakF3U0F8YmFkODcxMjU0ZmM5NWIyOGFkNjNhNmY4NTM3OTJjMzRjYjVlNDIyNDU2NGFlMWQwMjk3ZGMyZThhZmMzNTZlOA",
+          "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/m/t/v/3-kl20090-3-killer-multicolor-original-imagzthhjwzuexnj.jpeg?q=70",
       },
       {
         id: 4,

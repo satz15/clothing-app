@@ -63,7 +63,7 @@ const Shoe = [
       price: 'price: 3350',
       size: 'Size: 9' ,
       imgUrl:
-        "https://media.istockphoto.com/id/1285263523/photo/black-shoe.jpg?s=612x612&w=0&k=20&c=snDBlB5oNn2nKBX0jmf0wfTWNltbZoxq6GoewbBC9FA=",
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/e/b/y/-original-imagsqf7gervkj82.jpeg?q=70",
     },
     {
       id: 9,
@@ -71,7 +71,7 @@ const Shoe = [
       price: 'price: 3350',
       size: 'Size: 9' ,
       imgUrl:
-        "https://media.istockphoto.com/id/862324794/photo/elegant-used-brown-leather-male-shoes-set-on-a-solid-beige-background-with-vignette-effect.jpg?s=612x612&w=0&k=20&c=GrL4kwEoe_YeveHKlH5WuoyUO0MOYiqqbuaELnpXtTI=",
+        "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/l/c/u/6-6003-style-code-zixer-brown-original-imag6x8ppxmzf9yn-bb.jpeg?q=70",
     },
   ];
   
