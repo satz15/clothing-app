@@ -35,11 +35,23 @@ const CommerceDb = getFirestore(CommerceApp);
 
 const createUserDocumentFromAuth = async(userAuth) => {
   if (!userAuth) return;
-  console.log(userAuth);
   const userDocRef = doc(CommerceDb, 'users', userAuth.uid)
-  console.log(userDocRef);
-  const userSnapShot = await getDoc(userAuth);
-  console.log(userSnapShot);
+  const userSnapShot = await getDoc(userDocRef);
+
+  if (!userSnapShot.exists()) {
+    const {displayName, email} = userAuth;
+    const createdAt = new Date();
+    try{
+      await setDoc(userDocRef,{
+        displayName,
+        email,
+        createdAt,
+      });
+    } catch(err) {
+    console.log('error creating the user', err.message);
+    }
+  }
+  return userDocRef;
 }
 
 
