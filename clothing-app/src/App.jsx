@@ -6,6 +6,7 @@ import HomeShop from './components/route/home'
 import MenShop from './components/route/men'
 import WomenShop from './components/route/women'
 import Login from './components/login-page'
+import Signup from './components/route/signup'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
         <Route path='/men' element={<MenShop />}/>
         <Route path='/women' element={<WomenShop />}/>
         <Route path='/login' element={<Login />} />
+        <Route path='/Register' element={<Signup/>}/>
       </Routes>
       </div> 
   )

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Route,Routes,Link } from 'react-router-dom'
+
 
 import {signInWithGooglePopup, createUserDocumentFromAuth} from'../utils/firebase' 
 
@@ -7,9 +9,27 @@ const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-  const SignInWithGoogle = async () => {
+  const SignInWithGoogle = async () =>  { 
     const {user} = await signInWithGooglePopup();
    const userDocRef = await createUserDocumentFromAuth(user);
+   
+  //  console.log(userDocRef.firestore._firestoreClient.user.uid);
+
+  };
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    if (email && password) {
+      try {
+        const {user} = signInAuthUserWithEmailandPassword
+        (email, password);
+        console.log(user);
+        
+        setFormFields(defaultFormFields);
+      } catch(err) {
+        console.log(`Error occured while sign in`);
+      }
+    }
   };
 
     const handleLoginClick = () => {
@@ -59,6 +79,15 @@ const Login = () => {
                 Google Sign In
               </button>
             </div>
+            <div className='flex justify-evenly items-center mt-4'>
+          <p>
+            New user?
+            </p>
+            <button className="w bg-black w-32 text-white py-2 rounded-md  focus:outline-none">
+             <Link to ='/Register'>Register Here</Link> 
+            </button>
+    
+        </div>
         </div>
       </div>
     );

@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getAuth , GoogleAuthProvider, signInWithPopup} from 'firebase/auth'
+import {getAuth , GoogleAuthProvider, signInWithPopup, 
+  createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
 import {getFirestore, doc, getDoc, setDoc} from 'firebase/firestore';
 
 
@@ -25,10 +26,18 @@ const CommerceAuth = getAuth(CommerceApp);
 // Sign in with google 
 const googleProvider = new GoogleAuthProvider();
 
-const signInWithGooglePopup = () =>
-signInWithPopup(CommerceAuth, googleProvider);
+const signInWithGooglePopup = async () =>
+await signInWithPopup(CommerceAuth, googleProvider);
 
+const createAuthUsernameWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return;
+  return createUserWithEmailAndPassword(CommerceAuth, email, password);
+};
 
+const signInAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return;
+  return signInWithEmailAndPassword(CommerceAuth, email, password);
+};
 
 // firestore database
 const CommerceDb = getFirestore(CommerceApp);
@@ -55,4 +64,5 @@ const createUserDocumentFromAuth = async(userAuth) => {
 }
 
 
-export {signInWithGooglePopup, createUserDocumentFromAuth};
+export {signInWithGooglePopup, createUserDocumentFromAuth,
+   createUserWithEmailAndPassword, signInWithEmailAndPassword};
