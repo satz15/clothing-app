@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, NavLink } from "react-router-dom";
 
 import {
   signInWithGooglePopup,
@@ -79,7 +79,7 @@ const Login = () => {
             onClick={submitHandler}
             className="w-full py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none"
           >
-            Login
+            <NavLink to='/Login-btn'>Login</NavLink>
           </button>
           <button
             type="submit"

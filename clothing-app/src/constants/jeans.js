@@ -1,6 +1,6 @@
 const Jeans = [
     {
-            id: 1,
+            id: 34,
             name: "Levi's",
             price: 2200,
             size: "l",
@@ -8,7 +8,7 @@ const Jeans = [
               "https://media.istockphoto.com/id/600373506/photo/blue-jeans-isolated-with-clipping-path.jpg?s=612x612&w=0&k=20&c=4xhwLdvJ9kFpFX_0P6M4n2gYAV7efWbaoz_9-T0ZIYI=",
           },
           {
-            id: 2,
+            id: 35,
             name: "Peter england",
             price: 2100,
             size: "xl",
@@ -16,7 +16,7 @@ const Jeans = [
               "https://media.istockphoto.com/id/1334510184/photo/blue-jeans-trouser-isolated-on-the-white-background.jpg?s=612x612&w=0&k=20&c=49h0QyLcX7bpbv0VGXSrXX7m0UtoszzR31_zNd-0DS8=",
           },
           {
-            id: 3,
+            id: 36,
             name: "Lee cooper",
             price: 1700,
             size: "l",
@@ -24,7 +24,7 @@ const Jeans = [
               "https://media.istockphoto.com/id/938486228/photo/casual-jeans-pants-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=57tYEtGGuPhCxfeaRzJi3q2U7e2YYiF9EXP3T56AKVM=",
           },
           {
-            id: 4,
+            id: 37,
             name: "DNMX",
             price: 1150,
             size: "s",
