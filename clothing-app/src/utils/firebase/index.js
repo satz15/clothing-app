@@ -1,9 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getAuth , GoogleAuthProvider, signInWithPopup, 
-  createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
-import {getFirestore, doc, getDoc, setDoc} from 'firebase/firestore';
-
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -15,21 +19,21 @@ const firebaseConfig = {
   projectId: "clothing-app-c1e2e",
   storageBucket: "clothing-app-c1e2e.appspot.com",
   messagingSenderId: "214289502680",
-  appId: "1:214289502680:web:02b2e8f1f2209937b1e2ad"
+  appId: "1:214289502680:web:02b2e8f1f2209937b1e2ad",
 };
 
 // Initialize Firebase
 const CommerceApp = initializeApp(firebaseConfig);
 
-// Authentication 
+// Authentication
 const CommerceAuth = getAuth(CommerceApp);
-// Sign in with google 
+// Sign in with google
 const googleProvider = new GoogleAuthProvider();
 
 const signInWithGooglePopup = async () =>
-await signInWithPopup(CommerceAuth, googleProvider);
+  await signInWithPopup(CommerceAuth, googleProvider);
 
-const createAuthUsernameWithEmailAndPassword = async (email, password) => {
+const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
   return createUserWithEmailAndPassword(CommerceAuth, email, password);
 };
@@ -42,27 +46,37 @@ const signInAuthUserWithEmailAndPassword = async (email, password) => {
 // firestore database
 const CommerceDb = getFirestore(CommerceApp);
 
-const createUserDocumentFromAuth = async(userAuth) => {
+const createUserDocumentFromAuth = async (userAuth) => {
   if (!userAuth) return;
-  const userDocRef = doc(CommerceDb, 'users', userAuth.uid)
+  const userDocRef = doc(CommerceDb, "users", userAuth.uid);
   const userSnapShot = await getDoc(userDocRef);
 
   if (!userSnapShot.exists()) {
-    const {displayName, email} = userAuth;
+    const { displayName, email } = userAuth;
     const createdAt = new Date();
-    try{
-      await setDoc(userDocRef,{
+    try {
+      await setDoc(userDocRef, {
         displayName,
         email,
         createdAt,
       });
-    } catch(err) {
-    console.log('error creating the user', err.message);
+    } catch (err) {
+      console.log("error creating the user", err.message);
     }
   }
   return userDocRef;
-}
+};
 
-
-export {signInWithGooglePopup, createUserDocumentFromAuth,
-   createUserWithEmailAndPassword, signInWithEmailAndPassword};
+export {
+  // signInWithGooglePopup,
+  // createUserDocumentFromAuth,
+  // createUserWithEmailAndPassword,
+  // signInWithEmailAndPassword,
+  // createAuthUsernameWithEmailAndPassword,
+  // signInAuthUserWithEmailAndPassword,
+  signInWithGooglePopup,
+  createUserDocumentFromAuth,
+  createAuthUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInAuthUserWithEmailAndPassword,
+};

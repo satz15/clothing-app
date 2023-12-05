@@ -5,16 +5,16 @@ import {NavLink}from 'react-router-dom'
 
 const Navbar = () => {
     return ( 
-        <div className='bg-black text-white w-full h-[3rem] flex flex-row justify-evenly items-center' >
+        <div className='bg-black text-white w-full h-[3.5rem] flex flex-row justify-evenly items-center' >
         <div className="text-xl font-sans">Creating Buyers</div>
         <div className="flex flex-row gap-5">
           <span className="cursor-pointer text-xl font-sans"><NavLink to="/">Home</NavLink></span>
           <span className="cursor-pointer text-xl font-sans"><NavLink to='/men'>Men</NavLink></span>
           <span className="cursor-pointer text-xl font-sans"><NavLink to='/women'>Women</NavLink></span>
           <div className='flex h-[1.5rem] relative items-center'>
-            <input className="rounded-lg outline-none text-black"  type='text'  
+            <input className="rounded-lg outline-none text-black p-[2px] pr-1 pl-4"   type='text'  
              placeholder='search for you'/>
-          < HiOutlineSearch className="absolute ml-40 cursor-pointer  text-black" />
+          < HiOutlineSearch className="absolute ml-40 cursor-pointer   text-black" />
           </div>
           </div>
           <div className='flex flex-row gap-3 items-center'> 
