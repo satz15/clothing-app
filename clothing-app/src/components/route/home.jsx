@@ -3,6 +3,8 @@ import Shoes from "../mens-shoe";
 import Apparel from "../apparel";
 import Category from "../categories";
 import Women from "../womens-shoe";
+import Footer from "../footer";
+
 const HomeShop = () => {
     return ( <>
     <Slider/>
@@ -10,6 +12,7 @@ const HomeShop = () => {
       <Apparel/>
       <Category/>
       <Women/>
+      <Footer/>
     </> );
 }
  

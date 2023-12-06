@@ -8,6 +8,11 @@ const Womentops = () => {
          <h2 className="text-xl font-semibold text-gray-800 mb-2">{props.name}</h2>
          <span className="text-xl font-semibold text-gray-800 mb-2">{props.price}</span>
          <p className="text-xl font-semibold text-gray-800 mb-2">{props.size}</p>
+         <button
+        className="bg-black text-white px-4 py-2 mb-2 rounded w-48"
+      >
+        Add to Cart
+      </button>
      </div>
   );
 };

@@ -7,6 +7,7 @@ import MenShop from './components/route/men'
 import WomenShop from './components/route/women'
 import Login from './components/login-page'
 import Signup from './components/route/signup'
+import Cart from './components/route/cart'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,9 +24,10 @@ function App() {
         <Route path='/Login-btn' element={<HomeShop/>}/>
         <Route path='/Men-btn' element={<MenShop />}/>
         <Route path='/Women-btn' element={<WomenShop />}/>
+        <Route path='/Addcart' element={<Cart/>}/>
       </Routes>
       </div> 
   )
 }
 
-export default App
+export default App;

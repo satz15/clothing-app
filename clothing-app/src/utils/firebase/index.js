@@ -46,7 +46,7 @@ const signInAuthUserWithEmailAndPassword = async (email, password) => {
 // firestore database
 const CommerceDb = getFirestore(CommerceApp);
 
-const createUserDocumentFromAuth = async (userAuth) => {
+const createUserDocumentFromAuth = async (userAuth, additionalInformation = {})  => {
   if (!userAuth) return;
   const userDocRef = doc(CommerceDb, "users", userAuth.uid);
   const userSnapShot = await getDoc(userDocRef);
@@ -59,6 +59,7 @@ const createUserDocumentFromAuth = async (userAuth) => {
         displayName,
         email,
         createdAt,
+        ...additionalInformation
       });
     } catch (err) {
       console.log("error creating the user", err.message);
@@ -68,12 +69,6 @@ const createUserDocumentFromAuth = async (userAuth) => {
 };
 
 export {
-  // signInWithGooglePopup,
-  // createUserDocumentFromAuth,
-  // createUserWithEmailAndPassword,
-  // signInWithEmailAndPassword,
-  // createAuthUsernameWithEmailAndPassword,
-  // signInAuthUserWithEmailAndPassword,
   signInWithGooglePopup,
   createUserDocumentFromAuth,
   createAuthUserWithEmailAndPassword,

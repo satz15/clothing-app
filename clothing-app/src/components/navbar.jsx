@@ -19,7 +19,7 @@ const Navbar = () => {
           </div>
           <div className='flex flex-row gap-3 items-center'> 
           <BsCart4 />
-          <span className="cursor-pointer text-xl font-sans">Cart</span>
+          <span className="cursor-pointer text-xl font-sans"><NavLink to='Addcart'>Cart</NavLink></span>
           <NavLink className='cursor-pointer text-xl font-sans' to='/login'>Log In</NavLink>
           {/* <span className="cursor-pointer text-xl font-sans">sign In</span> */}
           <CgProfile />

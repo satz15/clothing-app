@@ -52,7 +52,7 @@ const Shoe = [
     {
       id: 7,
       name: "Polo",
-      price: 'price: 3350',
+      price: 'price: 2850',
       size: 'Size: 9' ,
       imgUrl:
         "https://media.istockphoto.com/id/523819878/photo/black-leather-shoes.jpg?s=612x612&w=0&k=20&c=jAUYsJ1qMtlGZKwJCvk_HBeCb4rD8rtTB20F0_uZB3c=",
@@ -60,7 +60,7 @@ const Shoe = [
     {
       id: 8,
       name: "Red tape",
-      price: 'price: 3350',
+      price: 'price: 2499',
       size: 'Size: 9' ,
       imgUrl:
         "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/e/b/y/-original-imagsqf7gervkj82.jpeg?q=70",
@@ -68,7 +68,7 @@ const Shoe = [
     {
       id: 9,
       name: "Levi's",
-      price: 'price: 3350',
+      price: 'price: 2399',
       size: 'Size: 9' ,
       imgUrl:
         "https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/l/c/u/6-6003-style-code-zixer-brown-original-imag6x8ppxmzf9yn-bb.jpeg?q=70",
