@@ -6,10 +6,10 @@ const Footer = () => {
     return ( 
         <div className="text-white font-sans mt-2">
 <body className="bg-black">
-    <h2 className="ml-12  font-bold">Creating Buyers</h2>
+    <h2 className="ml-12  font-bold ">Creating Buyers</h2>
     <div className="flex justify-around mt-5">
     <div className="leading-8 gap-1 " >
-        <h3 className="font-semibold">Shop Footwear</h3>
+        <h3 className="font-semibold text-base">Shop Footwear</h3>
         <p>Sneakers</p>
         <p>Casuals</p>
         <p>Formals</p>
@@ -17,7 +17,7 @@ const Footer = () => {
         <p>Sandals</p>
     </div>
     <div className="leading-8 gap-1" >
-        <h3 className="font-semibold">Shop Men's Clothing</h3>
+        <h3 className="font-semibold text-base">Shop Men's Clothing</h3>
         <p>Shirt</p>
         <p>T-shirt</p>
         <p>Sweatshirt</p>
@@ -25,14 +25,14 @@ const Footer = () => {
     </div>
 
     <div className="leading-8 gap-1">
-        <h3 className="font-semibold">Shop Women's Clothing</h3>
+        <h3 className="font-semibold text-base">Shop Women's Clothing</h3>
         <p>Tops</p>
         <p>T-shirts</p>
         <p>Shorts</p>
     </div>
 
     <div className="leading-8">
-        <h3 className="font-semibold">Contact Us</h3>
+        <h3 className="font-semibold text-base">Contact Us</h3>
         <p className="w-72">Need Help? Get in touch with us we will guide you the right way!</p>
         <div className="flex items-center gap-2"> 
         <FaPhoneAlt />
