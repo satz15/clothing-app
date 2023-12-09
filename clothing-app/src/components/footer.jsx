@@ -6,7 +6,7 @@ const Footer = () => {
     return ( 
         <div className="text-white font-sans mt-2">
 <body className="bg-black">
-    <h2 className="ml-12  font-bold ">Creating Buyers</h2>
+    <h2 className="ml-12  font-bold pt-5">Creating Buyers</h2>
     <div className="flex justify-around mt-5">
     <div className="leading-8 gap-1 " >
         <h3 className="font-semibold text-base">Shop Footwear</h3>

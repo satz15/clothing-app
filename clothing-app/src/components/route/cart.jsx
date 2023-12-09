@@ -10,9 +10,13 @@ const Addcart = () => {
             <span>Price</span>
             <span>Remove</span>
         </div>
-        <div className="flex text-right">
+        <br />
+        <hr className="border-4 w-[92rem] ml-56 "/>
+        <br />
+        <div className="flex float-right mr-60">
             <h1 className="font-bold text-2xl ">Total:$0</h1>
         </div>
+         
         </div>
      );
 }
