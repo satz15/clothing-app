@@ -1,6 +1,6 @@
 import { Tops } from "../../constants/womentops";
 
-const Womentops = () => {
+const Womentops = ({ addToCart }) => {
     const Shopping = (props) => {
  return ( 
      <div className="max-w-sm mx-auto bg-white w-96 ml-10 mt-4 mb-8 flex flex-col items-center gap-4 shadow-lg rounded-lg overflow-hidden justify-evenly">
@@ -10,6 +10,7 @@ const Womentops = () => {
          <p className="text-xl font-semibold text-gray-800 mb-2">{props.size}</p>
          <button
         className="bg-black text-white px-4 py-2 mb-2 rounded w-48"
+        onClick={() => addToCart(props)}
       >
         Add to Cart
       </button>

@@ -8,26 +8,50 @@ import WomenShop from './components/route/women'
 import Login from './components/login-page'
 import Signup from './components/route/signup'
 import Cart from './components/route/cart'
+import Menshirt from './components/route/men'
+import Women from './components/womens-shoe'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (item) => {
+    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+
+    if (existingItem) {
+      const updatedCart = cart.map((cartItem) =>
+        cartItem.id === item.id
+          ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          : cartItem
+      );
+
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, { ...item, quantity: 1 }]);
+    }
+  };
 
   return (
-      <div className=''>
-      <Navbar/>
+    <div className="">
+      <Navbar />
       <Routes>
-        <Route path='/' element={<HomeShop />}/>
-        <Route path='/men' element={<MenShop />}/>
-        <Route path='/women' element={<WomenShop />}/>
-        <Route path='/login' element={<Login />} />
-        <Route path='/Register' element={<Signup/>}/>
-        <Route path='/Login-btn' element={<HomeShop/>}/>
-        <Route path='/Men-btn' element={<MenShop />}/>
-        <Route path='/Women-btn' element={<WomenShop />}/>
-        <Route path='/Addcart' element={<Cart/>}/>
+        <Route path="/" element={<HomeShop />} />
+        {/* <Route path='/men' element={<MenShop />}/> */}
+        <Route path="/men" element={<Menshirt addToCart={addToCart} />} />
+        <Route path="/women" element={<WomenShop addToCart={addToCart} />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/Register" element={<Signup />} />
+        <Route path="/Login-btn" element={<HomeShop />} />
+        <Route path="/Men-btn" element={<MenShop />} />
+        <Route
+          path="/Women-btn"
+          element={<WomenShop addToCart={addToCart} />}
+        />
+
+        {/* <Route path="/Addcart" element={<Cart />} /> */}
+        <Route path="/Addcart" element={<Cart cart={cart} />} />
       </Routes>
-      </div> 
-  )
+    </div>
+  );
 }
 
 export default App;

@@ -5,13 +5,13 @@ import Category from "../categories";
 import Women from "../womens-shoe";
 import Footer from "../footer";
 
-const HomeShop = () => {
+const HomeShop = ({ addToCart }) => {
     return ( <>
     <Slider/>
       <Shoes/>
       <Apparel/>
       <Category/>
-      <Women/>
+      <Women addToCart={addToCart} />
       <Footer/>
     </> );
 }
