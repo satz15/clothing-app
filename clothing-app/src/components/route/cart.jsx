@@ -1,33 +1,38 @@
 import React from "react";
 
-const Addcart = ({cart}) => {
-    
-
-    return ( 
-        <div>
-        <div className="flex flex-row justify-evenly font-bold text-xl mt-20 ">
-            <span>Product</span>
-            <span>Description</span>
-            <span>Quantity</span>
-            <span>Price</span>
-            <span>Remove</span>
-        </div>
-        <br />
-        <hr className="border-4 w-[92rem] ml-56 "/>
-        <br />
-        {cart.map((item) => (
+const Addcart = ({ cart, onRemoveItem }) => {
+  return (
+    <div>
+      <div className="flex flex-row justify-evenly font-bold text-xl mt-20 ">
+        <span>Product</span>
+        <span>Description</span>
+        <span>Quantity</span>
+        <span>Price</span>
+        <span>Remove</span>
+      </div>
+      <br />
+      <hr className="border-4 w-[92rem] ml-56 " />
+      <br />
+      {cart.map((item) => (
         <div
           key={item.id}
           className="flex flex-row mt-4 text-xl justify-evenly"
         >
-          <span>{item.name}</span>
-          <span>{item.description}</span>
-          <span>{item.quantity}</span>
-          {/* <span>$ {item.price}</span> */}
-          <span>${item.price * item.quantity.toFixed(2)}</span>
+          <span className="text-xl font-semibold">{item.name}</span>
+          <span>
+            <img src={item.imgUrl} alt="" className="w-10 h-10" />
+          </span>
+          <span className="text-xl font-semibold">{item.quantity}</span>
+          <span className="text-xl font-semibold">$ {item.price}</span>
+          {/* <span>${(item.price * item.quantity).toFixed(2)}</span> */}
 
           <span>
-            <button >Remove</button>
+            <button
+              className="bg-black text-white px-4 py-2 mb-2 rounded w-24"
+              onClick={() => onRemoveItem(item.id)}
+            >
+              Remove
+            </button>
           </span>
         </div>
       ))}
@@ -50,6 +55,6 @@ const calculateTotal = (cart) => {
       return total;
     }, 0)
     .toFixed(2);
-}
- 
+};
+
 export default Addcart;

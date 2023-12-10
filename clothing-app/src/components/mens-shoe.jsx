@@ -1,6 +1,7 @@
 import { Shoe } from "../constants/shoes";
 
-const Shoes = () => {
+
+const Shoes = ({addToCart}) => {
   const ItemShop = (props) => {
     return (
         
@@ -11,6 +12,7 @@ const Shoes = () => {
         <p className="text-xl font-semibold text-gray-800 mb-2">{props.size}</p>
         <button
         className="bg-black text-white px-4 py-2 mb-2 rounded w-48"
+        onClick={() => addToCart(props)}
       >
         Add to Cart
       </button>

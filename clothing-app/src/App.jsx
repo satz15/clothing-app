@@ -9,7 +9,7 @@ import Login from './components/login-page'
 import Signup from './components/route/signup'
 import Cart from './components/route/cart'
 import Menshirt from './components/route/men'
-import Women from './components/womens-shoe'
+import Shoes from './components/mens-shoe'
 
 function App() {
   const [cart, setCart] = useState([]);
