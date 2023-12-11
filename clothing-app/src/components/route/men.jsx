@@ -1,6 +1,6 @@
 import { Shirt } from "../../constants/shirt";
-import { useState } from "react";
-import Addcart from "./cart";
+// import { useState } from "react";
+// import Addcart from "./cart";
 
 const Menshirt = ({ addToCart }) => {
   const Item = (props) => {

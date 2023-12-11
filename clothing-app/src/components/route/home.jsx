@@ -8,8 +8,8 @@ import Footer from "../footer";
 const HomeShop = ({ addToCart }) => {
     return ( <>
     <Slider/>
-      <Shoes/>
-      <Apparel/>
+      <Shoes addToCart={addToCart}/>
+      <Apparel addToCart={addToCart}/>
       <Category/>
       <Women addToCart={addToCart} />
       <Footer/>

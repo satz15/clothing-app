@@ -34,14 +34,14 @@ function App() {
     <div className="">
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomeShop />} />
+        <Route path="/" element={<HomeShop addToCart={addToCart}/>} />
         {/* <Route path='/men' element={<MenShop />}/> */}
         <Route path="/men" element={<Menshirt addToCart={addToCart} />} />
         <Route path="/women" element={<WomenShop addToCart={addToCart} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Register" element={<Signup />} />
-        <Route path="/Login-btn" element={<HomeShop />} />
-        <Route path="/Men-btn" element={<MenShop />} />
+        <Route path="/Login-btn" element={<HomeShop addToCart={addToCart}/>} />
+        <Route path="/Men-btn" element={<MenShop addToCart={addToCart}/>} />
         <Route
           path="/Women-btn"
           element={<WomenShop addToCart={addToCart} />}
