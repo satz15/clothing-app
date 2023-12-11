@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import './App.css'
-import { Route,Routes } from 'react-router-dom'
-import Navbar from './components/navbar'
-import HomeShop from './components/route/home'
-import MenShop from './components/route/men'
-import WomenShop from './components/route/women'
-import Login from './components/login-page'
-import Signup from './components/route/signup'
-import Cart from './components/route/cart'
-import Menshirt from './components/route/men'
-import Shoes from './components/mens-shoe'
+import { useState } from "react";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/navbar";
+import HomeShop from "./components/route/home";
+import MenShop from "./components/route/men";
+import WomenShop from "./components/route/women";
+import Login from "./components/login-page";
+import Signup from "./components/route/signup";
+import Cart from "./components/route/cart";
+import Menshirt from "./components/route/men";
+import Shoes from "./components/mens-shoe";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -48,7 +48,10 @@ function App() {
         />
 
         {/* <Route path="/Addcart" element={<Cart />} /> */}
-        <Route path="/Addcart" element={<Cart cart={cart} />} />
+        <Route
+          path="/Addcart"
+          element={<Cart cart={cart} setCart={setCart} />}
+        />
       </Routes>
     </div>
   );
