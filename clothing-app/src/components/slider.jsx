@@ -1,6 +1,9 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
+import Slide from "../assets/images/Slider-1.png";
+import Sliderr from "../assets/images/Slider-2.png";
+import Sliders from "../assets/images/Slider-3.png";
+import Slidee from "../assets/images/Slider-4.jpg";
 
 const Slider = () => {
   const responsive = {
@@ -33,22 +36,22 @@ const Slider = () => {
         autoPlay={true}
       >
         <img
-          src="../../src/assets/images/Slider-1.png"
+          src={Slide}
           alt=""
           className="w-screen h-[700px]"
         />
         <img
-          src="../../src/assets/images/Slider-2.png"
+          src={Sliderr}
           alt=""
           className="w-screen h-[700px]"
         />
         <img
-          src="../../src/assets/images/Slider-3.png"
+          src={Sliders}
           alt=""
           className="w-screen h-[700px]"
         />
         <img
-          src="../../src/assets/images/Slider-4.jpg"
+          src={Slidee}
           alt=""
           className="w-screen h-[700px]"
         />

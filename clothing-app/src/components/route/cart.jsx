@@ -1,6 +1,7 @@
 import React from "react";
 
 const Addcart = ({ cart, setCart }) => {
+
   const onRemoveItem = (id) => {
     const remaining = cart.filter((product) => product.id !== id);
     console.log(remaining);
@@ -8,14 +9,13 @@ const Addcart = ({ cart, setCart }) => {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className="w-full flex flex-col justify-center items-center ">
       <div className="w-[90rem] flex flex-row justify-evenly font-bold text-xl mt-20 border-b-4 pb-8">
         <span className="w-[8rem]">Product</span>
         <span className="w-[8rem]">Description</span>
         <span className="w-[8rem]">Quantity</span>
         <span className="w-[8rem]">Price</span>
         <span className="w-[8rem]">Remove</span>
-        {/* <span className="w-[8rem]">Action</span> */}
       </div>
       {/* <br /> */}
       {/* <hr className="border-4 w-[92rem] ml-56 " /> */}

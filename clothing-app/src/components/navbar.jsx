@@ -1,9 +1,20 @@
 import { HiOutlineSearch } from "react-icons/hi"
 import { BsCart4 } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
-import {NavLink}from 'react-router-dom'
+import {NavLink, useNavigate}from 'react-router-dom'
+import { useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({handlerFilter}) => {
+  const navigate = useNavigate();
+  // useState 
+  const [userInput, SetUserInput] = useState('');
+  // search function
+  function filteredData(){
+    if(userInput){
+      navigate("/filter")
+    }
+  }
+
     return ( 
         <div className='bg-black text-white w-full h-[3.5rem] flex flex-row justify-evenly items-center' >
         <div className="text-xl font-sans">Creating Buyers</div>
@@ -11,10 +22,14 @@ const Navbar = () => {
           <span className="cursor-pointer text-xl font-sans"><NavLink to="/">Home</NavLink></span>
           <span className="cursor-pointer text-xl font-sans"><NavLink to='/men'>Men</NavLink></span>
           <span className="cursor-pointer text-xl font-sans"><NavLink to='/women'>Women</NavLink></span>
-          <div className='flex h-[1.5rem] relative items-center'>
-            <input className="rounded-lg outline-none text-black p-[2px] pr-1 pl-4"   type='text'  
-             placeholder='search for you'/>
-          < HiOutlineSearch className="absolute ml-40 cursor-pointer   text-black" />
+          <div className='w-[12rem] flex h-[1.5rem] relative items-center justify-between rounded-lg bg-white'>
+            <div className="w-[80%]">
+              <input className="rounded-lg outline-none text-black w-full pl-2"   type='text'  
+             placeholder='search for you' value={userInput} onChange={(e)=>(SetUserInput(e.target.value))}/>  
+            </div>
+            <div className="w-[20%] text-[1.5rem]">
+              <HiOutlineSearch className="cursor-pointer text-black pl-2" onClick={()=>(filteredData())} />
+            </div>
           </div>
           </div>
           <div className='flex flex-row gap-3 items-center'> 

@@ -10,9 +10,11 @@ import Signup from "./components/route/signup";
 import Cart from "./components/route/cart";
 import Menshirt from "./components/route/men";
 import Shoes from "./components/mens-shoe";
+import Filter from "./components/filter";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [filterProducts, setFilterProducts] = useState([]);
 
   const addToCart = (item) => {
     const existingItem = cart.find((cartItem) => cartItem.id === item.id);
@@ -32,7 +34,7 @@ function App() {
 
   return (
     <div className="">
-      <Navbar />
+      <Navbar handlerFilter = {setFilterProducts}/>
       <Routes>
         <Route path="/" element={<HomeShop addToCart={addToCart}/>} />
         {/* <Route path='/men' element={<MenShop />}/> */}
@@ -42,6 +44,7 @@ function App() {
         <Route path="/Register" element={<Signup />} />
         <Route path="/Login-btn" element={<HomeShop addToCart={addToCart}/>} />
         <Route path="/Men-btn" element={<MenShop addToCart={addToCart}/>} />
+        <Route path="/filter" element={<Filter filterProducts={filterProducts}/>}/>
         <Route
           path="/Women-btn"
           element={<WomenShop addToCart={addToCart} />}
