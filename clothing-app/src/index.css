@@ -4,12 +4,7 @@
 
 .image{
     background-image: url(./assets/images/login-image.jpg);
-    /* object-fit: cover; */
    background-size:contain;
-   /* background-position: center; */
-   /* background-repeat: no-repeat; */
-   /* width: 100%;
-   height: auto; */
 }
 
 .img{

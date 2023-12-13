@@ -20,9 +20,6 @@ const Womentops = ({ addToCart }) => {
 };
 return(    
 <div>
-<div>
-   {/* <h2 className="text-black text-xl font-semibold flex mr-4">Tops</h2> */}
-</div>
 
 <div className="flex flex-wrap mx-14 pt-[5rem]">
 {Tops.map((item, id) => {

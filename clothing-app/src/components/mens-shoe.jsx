@@ -1,6 +1,5 @@
 import { Shoe } from "../constants/shoes";
 
-
 const Shoes = ({addToCart}) => {
   const ItemShop = (props) => {
     return (

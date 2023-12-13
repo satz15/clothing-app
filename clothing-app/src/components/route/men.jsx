@@ -1,6 +1,4 @@
 import { Shirt } from "../../constants/shirt";
-// import { useState } from "react";
-// import Addcart from "./cart";
 
 const Menshirt = ({ addToCart }) => {
   const Item = (props) => {
@@ -26,9 +24,6 @@ const Menshirt = ({ addToCart }) => {
   };
   return (
     <div>
-      <div>
-        {/* <h2 className="text-black text-xl font-semibold flex mr-4">Shirts</h2> */}
-      </div>
 
       <div className="flex flex-wrap mx-14 pt-[5rem]">
         {Shirt.map((item, id) => {

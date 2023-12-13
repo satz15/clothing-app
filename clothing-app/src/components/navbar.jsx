@@ -45,11 +45,10 @@ const Navbar = ({handlerFilter, allData, cart}) => {
           <div className="flex flex-row items-center cursor-pointer text-xl font-sans">
             <NavLink to='Addcart' className="flex flex-row justify-between items-center gap-4 relative">
               <BsCart4 />
-              <div className="text-[0.9rem] absolute left-2 bottom-4 bg-red-500 w-[1.4rem] h-[1.4rem] rounded-[50%] flex items-center justify-center">{cart.length}</div>Cart
+              <div className="text-[0.9rem] absolute left-2 bottom-4 bg-rose-950 w-[1.4rem] h-[1.4rem] rounded-[50%] flex items-center justify-center">{cart.length}</div>Cart
             </NavLink>
             </div>
             <NavLink className='cursor-pointer text-xl font-sans' to='/login'>Log In</NavLink>
-          {/* <span className="cursor-pointer text-xl font-sans">sign In</span> */}
           <CgProfile />
           </div>
       </div>

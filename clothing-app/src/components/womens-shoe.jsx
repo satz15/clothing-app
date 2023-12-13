@@ -24,7 +24,7 @@ const Women = ({addToCart}) => {
            <h2 className="black text-xl font-semibold">Women's Casual</h2>
            <h2 className="black text-xl font-semibold">View More</h2> 
            </div>
-        {/* <hr/> */}
+           
         <div className=" flex flex-wrap mx-14 ">
         {Womenshoe.map((item, id) => {
           return (

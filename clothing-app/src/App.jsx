@@ -9,7 +9,6 @@ import Login from "./components/login-page";
 import Signup from "./components/route/signup";
 import AddCart from "./components/route/cart";
 import Menshirt from "./components/route/men";
-import Shoes from "./components/mens-shoe";
 import Filter from "./components/filter";
 import { data } from "./constants/allData";
 

@@ -39,9 +39,6 @@ const Addcart = ({ cart, setCart }) => {
         <span className="w-[8rem]">Price</span>
         <span className="w-[8rem]">Remove</span>
       </div>
-      {/* <br /> */}
-      {/* <hr className="border-4 w-[92rem] ml-56 " /> */}
-      {/* <br /> */}
       <div className="w-[90rem] flex flex-col justify-evenly font-bold text-xl gap-4">
       {cart.map((item) => {
         return (
@@ -53,9 +50,9 @@ const Addcart = ({ cart, setCart }) => {
             <span>
               <img src={item.image} alt={item.name} className="w-20 h-20" />
             </span>
-            <span className="text-xl font-semibold flex items-center justify-center gap-1 w-[8rem] text-center">
-              <button onClick={()=>{addQuantity(item.id)}} className="bg-black w-5 h-8 text-white">+</button>{item.quantity}
-            < button onClick={()=> {minusQuantity(item.id)}} className="bg-black w-5 h-8 text-white">-</button></span>
+            <span className="text-xl font-semibold flex items-center justify-center gap-2  w-[8rem] text-center">
+              <button onClick={()=>{addQuantity(item.id)}} className="bg-black rounded  w-5 h-7 text-white">+</button>{item.quantity}
+            < button onClick={()=> {minusQuantity(item.id)}} className="bg-black rounded w-5 h-7 text-white">-</button></span>
             {/* <span className="text-xl font-semibold w-[8rem] text-center">$ {item.price}</span> */}
             <span className="w-[8rem]">${(Number(item.price) * item.quantity).toFixed(2)}</span>
 
