@@ -384,3 +384,5 @@ const data = [
           "https://media.istockphoto.com/id/512206854/vector/shoes-top-view.jpg?s=612x612&w=0&k=20&c=3VmdbJLxToymsWzdHdk1NwH_K4XPZU-PGzAUeqrQius=",
       },
 ]
+
+export {data}

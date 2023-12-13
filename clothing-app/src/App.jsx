@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar";
@@ -7,14 +7,20 @@ import MenShop from "./components/route/men";
 import WomenShop from "./components/route/women";
 import Login from "./components/login-page";
 import Signup from "./components/route/signup";
-import Cart from "./components/route/cart";
+import AddCart from "./components/route/cart";
 import Menshirt from "./components/route/men";
 import Shoes from "./components/mens-shoe";
 import Filter from "./components/filter";
+import { data } from "./constants/allData";
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [filterProducts, setFilterProducts] = useState([]);
+  const [filterProducts, setFilterProducts] = useState("classic");
+
+  const UserContext = createContext();
+  // console.log(filterProducts)
+
+  const [allData, setAllData] = useState([...data]);
 
   const addToCart = (item) => {
     const existingItem = cart.find((cartItem) => cartItem.id === item.id);
@@ -34,17 +40,21 @@ function App() {
 
   return (
     <div className="">
-      <Navbar handlerFilter = {setFilterProducts}/>
+      <Navbar handlerFilter={setFilterProducts} allData={allData} />
       <Routes>
-        <Route path="/" element={<HomeShop addToCart={addToCart}/>} />
+        <Route path="/" element={<HomeShop addToCart={addToCart} />} />
         {/* <Route path='/men' element={<MenShop />}/> */}
         <Route path="/men" element={<Menshirt addToCart={addToCart} />} />
         <Route path="/women" element={<WomenShop addToCart={addToCart} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Register" element={<Signup />} />
-        <Route path="/Login-btn" element={<HomeShop addToCart={addToCart}/>} />
-        <Route path="/Men-btn" element={<MenShop addToCart={addToCart}/>} />
-        <Route path="/filter" element={<Filter filterProducts={filterProducts}/>}/>
+        <Route path="/Login-btn" element={<HomeShop addToCart={addToCart} />} />
+        <Route path="/Men-btn" element={<MenShop addToCart={addToCart} />} />
+        <Route
+          path="/filter"
+          element={<Filter filterProducts={filterProducts} data={data} />}
+        />
+
         <Route
           path="/Women-btn"
           element={<WomenShop addToCart={addToCart} />}
@@ -53,7 +63,7 @@ function App() {
         {/* <Route path="/Addcart" element={<Cart />} /> */}
         <Route
           path="/Addcart"
-          element={<Cart cart={cart} setCart={setCart} />}
+          element={<AddCart cart={cart} setCart={setCart} />}
         />
       </Routes>
     </div>
