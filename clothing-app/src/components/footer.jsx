@@ -4,8 +4,7 @@ import { FaRegEnvelope } from "react-icons/fa6";
 
 const Footer = () => {
     return ( 
-        <div className="text-white font-sans mt-2">
-<body className="bg-black">
+        <div className="text-white font-sans mt-2 bg-black">
     <h2 className="ml-12  font-bold pt-5">Creating Buyers</h2>
     <div className="flex justify-around mt-5">
     <div className="leading-8 gap-1 " >
@@ -50,7 +49,7 @@ const Footer = () => {
         <p className="w-60">Get pops for new arrivals, offers and more!</p>
         <br />
         <input className="rounded-xl outline-none border-white w-72 h-7 text-black" type ="text" placeholder="Email Address"/> 
-        <submit className="-ml-16 text-black cursor-pointer">Submit</submit>
+        <button className="-ml-16 text-black cursor-pointer">Submit</button>
     </div>
     </div>
 
@@ -59,7 +58,6 @@ const Footer = () => {
 
 
 
-</body>
         </div>
      );
 }

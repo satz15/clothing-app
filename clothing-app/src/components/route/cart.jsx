@@ -8,12 +8,34 @@ const Addcart = ({ cart, setCart }) => {
     setCart(remaining);
   };
 
+  const addQuantity = (id) => {
+    const cartProducts = cart.map((product) => {
+     if(product.id === id) {
+      console.log(product.quantity + 1);
+      return {...product,quantity : product.quantity+1}
+     }else{
+      return product;
+     }
+    }) 
+    setCart(cartProducts)
+  }
+
+  const minusQuantity = (id) => {
+    const cartProducts = cart.map((product) => {
+     if(product.id === id && product.quantity !== 1) {
+      return {...product,quantity : product.quantity-1}
+     }else{
+      return product;
+     }
+    }) 
+    setCart(cartProducts)
+  }
   return (
     <div className="w-full flex flex-col justify-center items-center ">
-      <div className="w-[90rem] flex flex-row justify-evenly font-bold text-xl mt-20 border-b-4 pb-8">
+      <div className="w-[90rem] flex flex-row justify-evenly font-bold text-xl  mt-20 border-b-4 pb-8">
         <span className="w-[8rem]">Product</span>
-        <span className="w-[8rem]">Description</span>
-        <span className="w-[8rem]">Quantity</span>
+        <span className="w-[8rem]">Image</span>
+        <span className="w-[8rem]"> Quantity </span>
         <span className="w-[8rem]">Price</span>
         <span className="w-[8rem]">Remove</span>
       </div>
@@ -31,7 +53,9 @@ const Addcart = ({ cart, setCart }) => {
             <span>
               <img src={item.image} alt={item.name} className="w-20 h-20" />
             </span>
-            <span className="text-xl font-semibold w-[8rem] text-center">{item.quantity}</span>
+            <span className="text-xl font-semibold flex items-center justify-center gap-1 w-[8rem] text-center">
+              <button onClick={()=>{addQuantity(item.id)}} className="bg-black w-5 h-8 text-white">+</button>{item.quantity}
+            < button onClick={()=> {minusQuantity(item.id)}} className="bg-black w-5 h-8 text-white">-</button></span>
             {/* <span className="text-xl font-semibold w-[8rem] text-center">$ {item.price}</span> */}
             <span className="w-[8rem]">${(Number(item.price) * item.quantity).toFixed(2)}</span>
 

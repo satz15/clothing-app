@@ -3,7 +3,8 @@ import { Tops } from "../../constants/womentops";
 const Womentops = ({ addToCart }) => {
     const Shopping = (props) => {
  return ( 
-     <div className="max-w-sm mx-auto bg-white w-96 ml-10 mt-4 mb-8 flex flex-col items-center gap-4 shadow-lg rounded-lg overflow-hidden justify-evenly">
+     <div className="max-w-sm mx-auto bg-white w-96 ml-10 mt-4 mb-8 flex flex-col
+     hover:scale-105 items-center gap-4 shadow-lg rounded-lg overflow-hidden justify-evenly">
          <img className=" mt-full w-74 h-64 object-center" src={props.image} />
          <h2 className="text-xl font-semibold text-gray-800 mb-2">{props.name}</h2>
          <span className="text-xl font-semibold text-gray-800 mb-2">{props.price}</span>
@@ -23,7 +24,7 @@ return(
    {/* <h2 className="text-black text-xl font-semibold flex mr-4">Tops</h2> */}
 </div>
 
-<div className="flex flex-wrap mx-14 ">
+<div className="flex flex-wrap mx-14 pt-[5rem]">
 {Tops.map((item, id) => {
 return (
  <Shopping

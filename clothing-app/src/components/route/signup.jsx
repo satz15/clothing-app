@@ -7,6 +7,7 @@ import {
 import { useUser } from "../context";
 
 const Signup = () => {
+  console.log(useUser());
   const { formFields, setFormFields } = useUser();
   const { displayName, email, password, confirmPassword } = formFields;
 

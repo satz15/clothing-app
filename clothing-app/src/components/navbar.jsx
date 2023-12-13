@@ -5,33 +5,20 @@ import {NavLink, useNavigate}from 'react-router-dom'
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
-const Navbar = ({handlerFilter, allData}) => {
+const Navbar = ({handlerFilter, allData, cart}) => {
   const navigate = useNavigate();
   // useState 
   const [userInput, SetUserInput] = useState('');
   // search function
   function filteredData(){
     if(userInput){
-      // let data = allData.filter((ele)=> {
-      //   console.log(ele.name.toLowerCase().includes(userInput))
-      //   if(ele.name.toLowerCase().includes(userInput)){
-      //     return ele;
-      //   }
-      // })
-      // console.log(data)
-      // if(data.length !== 0){
-      // }else{
-      //   handlerFilter(()=>{
-      //     return data;
-      //   })
-      // }
       handlerFilter(userInput)
       navigate("/filter");
     }
   }
 
     return ( 
-        <div className='bg-black text-white w-full h-[3.5rem] flex flex-row justify-evenly items-center' >
+        <div className='bg-black text-white w-full h-[3.5rem] flex flex-row justify-evenly items-center fixed z-50' >
         <div className="text-xl font-sans">Creating Buyers</div>
         <div className="flex flex-row gap-5">
           <span className="cursor-pointer text-xl font-sans"><NavLink to="/">Home</NavLink></span>
@@ -55,12 +42,13 @@ const Navbar = ({handlerFilter, allData}) => {
           </div>
           </div>
           <div className='flex flex-row gap-2 items-center'> 
-          <div className="flex items-center">
-            <BsCart4 />
-            {/* <div className="mb-3"><p>1</p></div> */}
-          </div>
-          <span className="cursor-pointer text-xl font-sans"><NavLink to='Addcart'>Cart</NavLink></span>
-          <NavLink className='cursor-pointer text-xl font-sans' to='/login'>Log In</NavLink>
+          <div className="flex flex-row items-center cursor-pointer text-xl font-sans">
+            <NavLink to='Addcart' className="flex flex-row justify-between items-center gap-4 relative">
+              <BsCart4 />
+              <div className="text-[0.9rem] absolute left-2 bottom-4 bg-red-500 w-[1.4rem] h-[1.4rem] rounded-[50%] flex items-center justify-center">{cart.length}</div>Cart
+            </NavLink>
+            </div>
+            <NavLink className='cursor-pointer text-xl font-sans' to='/login'>Log In</NavLink>
           {/* <span className="cursor-pointer text-xl font-sans">sign In</span> */}
           <CgProfile />
           </div>

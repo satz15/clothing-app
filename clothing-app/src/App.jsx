@@ -37,10 +37,11 @@ function App() {
       setCart([...cart, { ...item, quantity: 1 }]);
     }
   };
+  
 
   return (
     <div className="">
-      <Navbar handlerFilter={setFilterProducts} allData={allData} />
+      <Navbar handlerFilter={setFilterProducts} allData={allData} cart={cart}/>
       <Routes>
         <Route path="/" element={<HomeShop addToCart={addToCart} />} />
         {/* <Route path='/men' element={<MenShop />}/> */}
