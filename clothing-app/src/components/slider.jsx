@@ -25,7 +25,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="pt-[3rem]">
+    <div className="pt-[3.5rem]">
       <Carousel
         swipeable={false}
         draggable={false}

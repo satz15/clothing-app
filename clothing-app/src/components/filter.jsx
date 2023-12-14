@@ -5,11 +5,12 @@ const Filter = ({ filterProducts, data }) => {
 
   console.log(products);
   return (
-    <div>
+    <div className=" flex flex-wrap ">
       {products.map((product) => {
         return (
-            <div className="max-w-sm mx-auto bg-white w-96 ml-10 mt-4 mb-8 flex flex-wrap items-center gap-4 shadow-lg rounded-lg overflow-hidden justify-evenly">
-          <div key={product.id}>
+            <div className="max-w-sm mx-auto bg-white  flex flex-wrap pt-[6rem]
+             items-center gap-8  shadow-lg rounded-lg overflow-hidden justify-center">
+          <div className="flex flex-col items-center w-[20rem] mx-14" key={product.id}>
           <img className="mt-full w-74 h-64 object-center" src={product.imgUrl}></img>
             <h2 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h2>
             <span className="text-xl font-semibold text-gray-800 mb-2">{product.price}</span>
