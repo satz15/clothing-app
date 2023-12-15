@@ -14,7 +14,7 @@ import { data } from "./constants/allData";
 
 function App() {
   const [cart, setCart] = useState([]);
-  const [filterProducts, setFilterProducts] = useState("classic");
+  const [filterProducts, setFilterProducts] = useState([]);
 
   const UserContext = createContext();
   // console.log(filterProducts)
@@ -52,7 +52,7 @@ function App() {
         <Route path="/Men-btn" element={<MenShop addToCart={addToCart} />} />
         <Route
           path="/filter"
-          element={<Filter filterProducts={filterProducts} data={data} />}
+          element={<Filter filterProducts={filterProducts} data={data} addToCart={addToCart} />}
         />
 
         <Route

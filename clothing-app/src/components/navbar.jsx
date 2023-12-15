@@ -10,10 +10,39 @@ const Navbar = ({handlerFilter, allData, cart}) => {
   // useState 
   const [userInput, SetUserInput] = useState('');
   // search function
+
+  // update usestate
+  const updateStateVariable = (val)=>{
+    let input = val;
+    input = input.replaceAll(" ", "");
+    input = input.replaceAll(`'`, "");
+    SetUserInput(input);
+  }
   function filteredData(){
     if(userInput){
-      handlerFilter(userInput)
-      navigate("/filter");
+      const products = allData.filter((product) => {
+        product.name = product.name.replaceAll(' ','');
+        product.name = product.name.replaceAll(`'`,``);
+        product.category = product.category.replaceAll(' ','');
+        product.category = product.category.replaceAll("'","");
+      let item = product.category.toLowerCase().includes(userInput.toLowerCase())
+      if(!item){
+        if(product.name.toLowerCase().includes(userInput.toLowerCase())){
+          return product;
+        }
+      }else{
+        return product;
+      }
+      }
+        
+      );
+      if(products.length !== 0){
+        handlerFilter(products)
+        navigate("/filter");
+      }else{
+        alert(`Data not found!!!`)
+      }
+      
     }
   }
 
@@ -27,9 +56,9 @@ const Navbar = ({handlerFilter, allData, cart}) => {
           <div className='w-[12rem] flex h-[1.5rem] relative items-center justify-between rounded-lg bg-white'>
             <div className="w-[80%]">
               <input className="rounded-lg outline-none text-black w-full pl-2"   type='text'  
-             placeholder='search for you' value={userInput} onChange={(event)=>{
-              SetUserInput(event.target.value);
-             }} onKeyDown={(event)=>{
+             placeholder='search for you' onChange={(event)=>
+              updateStateVariable(event.target.value)
+             } onKeyDown={(event)=>{
               if(event.key === "Enter"){
                 filteredData()
               }

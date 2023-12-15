@@ -41,6 +41,7 @@ const Addcart = ({ cart, setCart }) => {
       </div>
       <div className="w-[90rem] flex flex-col justify-evenly font-bold text-xl gap-4">
       {cart.map((item) => {
+        console.log(item)
         return (
             <div
             key={item.id}
