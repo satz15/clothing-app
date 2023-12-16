@@ -4,7 +4,7 @@ import { FaRegEnvelope } from "react-icons/fa6";
 
 const Footer = () => {
     return ( 
-        <div className="text-white font-sans mt-2 bg-black">
+        <div className="text-white font-sans mt-20 bg-black">
     <h2 className="ml-12  font-bold pt-5">Creating Buyers</h2>
     <div className="flex justify-around mt-5">
     <div className="leading-8 gap-1 " >

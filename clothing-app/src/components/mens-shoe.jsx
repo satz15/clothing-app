@@ -11,7 +11,7 @@ const Shoes = ({addToCart}) => {
         <span className="text-xl font-semibold text-gray-800 mb-2">{props.price}</span>
         <p className="text-xl font-semibold text-gray-800 mb-2">{props.size}</p>
         <button
-        className="bg-black text-white px-4 py-2 mb-2 rounded w-48"
+        className="bg-black text-white px-4 py-2  mb-[25px] rounded w-48"
         onClick={() => addToCart(props)}
       >
         Add to Cart

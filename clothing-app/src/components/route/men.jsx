@@ -14,7 +14,7 @@ const Menshirt = ({ addToCart }) => {
         </span>
         <p className="text-xl font-semibold text-gray-800 mb-2">{props.size}</p>
         <button
-          className="bg-black text-white px-4 py-2 mb-2 rounded w-48 hover:bg-gray-800 hover:text-gray-300"
+          className="bg-black text-white px-4 py-2 rounded w-48 mb-[25px] hover:bg-gray-800 hover:text-gray-300"
           onClick={() => addToCart(props)}
         >
           Add to Cart

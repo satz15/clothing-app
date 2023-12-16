@@ -12,7 +12,7 @@ const Filter = ({ filterProducts, data , addToCart}) => {
             <span className="text-xl font-semibold text-gray-800 mb-2">{product.price}</span>
             <p className="text-xl font-semibold text-gray-800 mb-2">{product.size}</p>
             <button
-        className="bg-black text-white px-4 py-2 mb-2 rounded w-48"
+        className="bg-black text-white px-4 py-2  mb-[25px] rounded w-48"
         onClick={() => addToCart(product)}
       >
         Add to Cart
@@ -21,7 +21,7 @@ const Filter = ({ filterProducts, data , addToCart}) => {
           </div>
         );
       })) : 
-      <div className="w-full min-h-[100vh] flex justify-center items-center">
+      <div className="w-full min-h-[100vh] font-extrabold flex justify-center items-center">
         No data found!
         </div>}
     </div>

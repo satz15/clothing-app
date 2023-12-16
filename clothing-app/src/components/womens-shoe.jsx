@@ -3,14 +3,14 @@ import { Womenshoe } from "../constants/womenshoe";
 const Women = ({addToCart}) => {
     const Items = (props) => {
         return(
-            <div className="max-w-sm mx-auto w-96 ml-10 mt-4 flex flex-col items-center gap-4 
+            <div className="max-w-sm mx-auto w-96 ml-10 mt-4  flex flex-col items-center gap-4 
             hover:scale-105 bg-white shadow-lg rounded-lg overflow-hidden justify-between">
         <img className=" w-full h-64 object-center" src={props.image} />
         <h2 className="text-xl font-semibold text-gray-800 mb-2">{props.name}</h2>
         <span className="text-xl font-semibold text-gray-800 mb-2">{props.price}</span>
         <p className="text-xl font-semibold text-gray-800 mb-2">{props.size}</p>
         <button
-        className="bg-black text-white px-4 py-2 mb-2 rounded w-48"
+        className="bg-black text-white px-4 py-2  rounded w-48 mb-[25px]"
         onClick={() => addToCart(props)}
       >
         Add to Cart
