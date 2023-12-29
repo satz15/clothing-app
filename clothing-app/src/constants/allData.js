@@ -4,7 +4,7 @@ const data = [
         name: "Classic polo",
         price: "1200",
         size: "Size : L",
-        category: "Shirts,",
+        category: "Shirts,Menshirts",
         image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV5yFKFT7a6LzyygFaebo6nZegDwzazdGnmA&usqp=CAU",
       },

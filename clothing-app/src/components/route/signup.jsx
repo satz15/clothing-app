@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import {
   createAuthUserWithEmailAndPassword,
@@ -119,7 +120,9 @@ const Signup = () => {
           type="submit"
           className="w-full p-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
         >
-          Sign Up
+
+          <NavLink to="/HomeShop"> Sign Up</NavLink>
+         
         </button>
       </form>
     </div>

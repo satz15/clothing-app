@@ -1,6 +1,6 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useContext } from "react";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar";
 import HomeShop from "./components/route/home";
 import MenShop from "./components/route/men";
@@ -11,10 +11,22 @@ import AddCart from "./components/route/cart";
 import Menshirt from "./components/route/men";
 import Filter from "./components/filter";
 import { data } from "./constants/allData";
+import { updateCurrentUser } from "firebase/auth";
+import {useUser} from "./components/context"
 
 function App() {
   const [cart, setCart] = useState([]);
   const [filterProducts, setFilterProducts] = useState([]);
+
+  const userDetails = useUser();
+  console.log(userDetails)
+  const ProtectedRoute = ({children}) => {
+    return <Navigate to="/Login"/>
+    // if (!formFields){
+    //   return <Navigate to="/Login"/>
+    // }return children;
+  }
+  console.log(updateCurrentUser);
 
   const UserContext = createContext();
   // console.log(filterProducts)
@@ -48,6 +60,8 @@ function App() {
         <Route path="/women" element={<WomenShop addToCart={addToCart} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Register" element={<Signup />} />
+        <Route path="/SignUp" element={<HomeShop />} />
+        <Route path="/HomeShop" element={<HomeShop/>}/>
         <Route path="/Login-btn" element={<HomeShop addToCart={addToCart} />} />
         <Route path="/Men-btn" element={<MenShop addToCart={addToCart} />} />
         <Route

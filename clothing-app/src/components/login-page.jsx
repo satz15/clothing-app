@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Routes, Link, NavLink } from "react-router-dom";
+import {  Link, NavLink } from "react-router-dom";
 
 import {
   signInWithGooglePopup,
@@ -18,22 +18,23 @@ const Login = () => {
   const { displayName, email, password, confirmPassword } = formFields;
 
   const submitHandler = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     console.log("hit");
     if (email && password) {
+      console.log(email," ==", password)
       try {
-        const { user } = await signInAuthUserWithEmailAndPassword(
+        const formFields = await signInAuthUserWithEmailAndPassword(
           email,
           password
         );
-        console.log({ user });
-        setFormFields({ email: "", password: "", confirmPassword: "" });
+        console.log( formFields );
+        // setFormFields({ email: "", password: "", confirmPassword: "" });
 
-        if (user) {
-          setUser(user.email, user.displayName);
-          console.log(user.email);
-          console.log(user.displayName);
-        }
+        // if (user) {
+        //   setUser(user.email, user.displayName);
+        //   console.log(user.email);
+        //   console.log(user.displayName);
+        // }
       } catch (err) {
         console.log("Error Occurd while Login", err.message);
         console.log(err.code);
@@ -47,7 +48,9 @@ const Login = () => {
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setFormFields({ ...formFields, [name]: value });
+    console.log(e.target.name);
   };
+  
 
   return (
     <div className="flex items-center justify-center min-h-screen image">
@@ -56,9 +59,9 @@ const Login = () => {
         <div className="mb-4">
           <label className="block text-sm font-medium text-bl">Username</label>
           <input
-            type="text"
+            type="email"
             id="username"
-            name="username"
+            name="email"
             onChange={changeHandler}
             className="w-full p-2 mt-1 border rounded-md"
           />

@@ -7,12 +7,14 @@ import Footer from "../footer";
 
 const HomeShop = ({ addToCart }) => {
     return ( <>
+    <div className="home">
     <Slider/>
       <Shoes addToCart={addToCart}/>
       <Apparel addToCart={addToCart}/>
       <Category/>
       <Women addToCart={addToCart} />
       <Footer/>
+      </div>
     </> );
 }
  

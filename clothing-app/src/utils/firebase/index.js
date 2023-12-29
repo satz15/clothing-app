@@ -8,6 +8,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 
 // Your web app's Firebase configuration
@@ -72,4 +73,5 @@ export {
   createAuthUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInAuthUserWithEmailAndPassword,
+  getStorage
 };

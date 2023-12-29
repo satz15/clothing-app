@@ -4,11 +4,11 @@ import { FaRegEnvelope } from "react-icons/fa6";
 
 const Footer = () => {
     return ( 
-        <div className="text-white font-sans mt-20 bg-black">
+        <div className="text-white font-sans mt-20 bg-black  footer">
     <h2 className="ml-12  font-bold pt-5">Creating Buyers</h2>
     <div className="flex justify-around mt-5">
     <div className="leading-8 gap-1 " >
-        <h3 className="font-semibold text-base">Shop Footwear</h3>
+        <h3 className="font-semibold text-base pb-3">Shop Footwear</h3>
         <p>Sneakers</p>
         <p>Casuals</p>
         <p>Formals</p>
@@ -16,7 +16,7 @@ const Footer = () => {
         <p>Sandals</p>
     </div>
     <div className="leading-8 gap-1" >
-        <h3 className="font-semibold text-base">Shop Men's Clothing</h3>
+        <h3 className="font-semibold text-base pb-3">Shop Men's Clothing</h3>
         <p>Shirt</p>
         <p>T-shirt</p>
         <p>Sweatshirt</p>
@@ -24,14 +24,14 @@ const Footer = () => {
     </div>
 
     <div className="leading-8 gap-1">
-        <h3 className="font-semibold text-base">Shop Women's Clothing</h3>
+        <h3 className="font-semibold text-base pb-3">Shop Women's Clothing</h3>
         <p>Tops</p>
         <p>T-shirts</p>
         <p>Shorts</p>
     </div>
 
     <div className="leading-8">
-        <h3 className="font-semibold text-base">Contact Us</h3>
+        <h3 className="font-semibold text-base pb-3">Contact Us</h3>
         <p className="w-72">Need Help? Get in touch with us we will guide you the right way!</p>
         <div className="flex items-center gap-2"> 
         <FaPhoneAlt />
@@ -45,7 +45,7 @@ const Footer = () => {
     </div>
 
     <div className="leading-8 ">
-        <h3>Keep Exploring</h3>
+        <h3 className="flex pb-3">Keep Exploring</h3>
         <p className="w-60">Get pops for new arrivals, offers and more!</p>
         <br />
         <input className="rounded-xl outline-none border-white w-72 h-7 text-black" type ="text" placeholder="Email Address"/> 

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.image{
+ .image{
     background-image: url(./assets/images/login-image.jpg);
    background-size:contain;
 }
@@ -10,3 +10,54 @@
 .img{
     background-image: url(./assets/images/signup-img.jpg);
 }
+/* .home{
+    font-family: 'Caveat', cursive; 
+}
+.navbar{
+    font-family: 'Caveat', cursive;
+}
+.footer{
+    font-family: 'Caveat', cursive;
+}
+
+
+@media (max-width:400px){
+    .navbar{
+        display: none;
+    }
+    .img{
+        width: 400px;
+        height: auto;
+    }
+    .imgg{
+        width: 400px;
+        height: auto;
+    }
+    .imggg{
+        width: 400px;
+        height: auto;
+    }
+    .imgggg{
+        width: 400px;
+        height: auto;
+    }
+    .menshoe{
+        width: 400;
+        height:auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .shoeone{
+        width: 80px;
+        height: 80px;
+    }
+    .menimg{
+        width: 200px;
+        height: auto;
+    }
+    .womenimg{
+        width: 200px;
+        height: auto;
+    }
+    
+} */ 

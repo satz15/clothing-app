@@ -37,6 +37,7 @@ const Navbar = ({ handlerFilter, allData, cart }) => {
       if (products.length !== 0) {
         handlerFilter(products);
         navigate("/filter");
+        SetUserInput('');
       } else {
         alert(`Data not found!!!`);
       }
@@ -51,21 +52,22 @@ const Navbar = ({ handlerFilter, allData, cart }) => {
 
 
   return (
-    <div className="bg-black text-white w-full h-[3.5rem] flex flex-row justify-between px-20  items-center fixed z-50 ">
-      <div className="text-xl font-sans flex items-center gap-3">
+    <div className="bg-black text-white w-full h-[3.5rem] flex flex-row  justify-between px-20  items-center fixed z-50 navbar">
+      <div className="text-xl flex items-center gap-3">
         <div className="w-[3rem] h-[3rem]">
           <img src={Logo} alt="" />
+          {/* <img src="../" alt="" /> */}
         </div>
         Creating Buyers
       </div>
       <div className="flex flex-row gap-5">
-        <span className="cursor-pointer text-xl font-sans">
+        <span className="cursor-pointer text-xl ">
           <NavLink to="/">Home</NavLink>
         </span>
-        <span className="cursor-pointer text-xl font-sans">
+        <span className="cursor-pointer text-xl ">
           <NavLink to="/men">Men</NavLink>
         </span>
-        <span className="cursor-pointer text-xl font-sans">
+        <span className="cursor-pointer text-xl ">
           <NavLink to="/women">Women</NavLink>
         </span>
         <div className="w-[12rem] flex h-[1.5rem] relative items-center justify-between rounded-lg bg-white">
@@ -74,6 +76,7 @@ const Navbar = ({ handlerFilter, allData, cart }) => {
               className="rounded-lg outline-none text-black w-full pl-2"
               type="text"
               placeholder="search for you"
+              value={userInput}
               onChange={(event) => updateStateVariable(event.target.value)}
               onKeyDown={(event) => {
                 if (event.key === "Enter") {
@@ -92,7 +95,7 @@ const Navbar = ({ handlerFilter, allData, cart }) => {
         </div>
       </div>
       <div className="flex flex-row gap-4 items-center">
-        <div className="flex flex-row items-center cursor-pointer text-xl font-sans">
+        <div className="flex flex-row items-center cursor-pointer text-xl ">
           <NavLink
             to="Addcart"
             className="flex flex-row justify-between items-center gap-2 relative"
@@ -108,7 +111,7 @@ const Navbar = ({ handlerFilter, allData, cart }) => {
           </NavLink>
         </div>
         <div className="flex gap-2 items-center">
-          <NavLink className="cursor-pointer text-xl font-sans" to="/login">
+          <NavLink className="cursor-pointer text-xl " to="/login">
             Log In
           </NavLink>
           <CgProfile />
