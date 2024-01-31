@@ -30,6 +30,21 @@ const Addcart = ({ cart, setCart }) => {
     }) 
     setCart(cartProducts)
   }
+
+  const calculateTotal = (cart) => {
+    return cart
+      .reduce((total, item) => {
+        const itemPrice = parseFloat(item.price);
+        const itemQuantity = item.quantity || 1;
+        if (!isNaN(itemPrice) && itemQuantity > 0) {
+          return total + itemPrice * itemQuantity;
+        }
+  
+        return total;
+      }, 0)
+      .toFixed(2);
+  };
+
   return (
     <div className="w-full flex flex-col justify-center items-center ">
       <div className="w-[90rem] flex flex-row justify-evenly font-bold text-xl  mt-20 border-b-4 pb-8">
@@ -76,18 +91,6 @@ const Addcart = ({ cart, setCart }) => {
   );
 };
 
-const calculateTotal = (cart) => {
-  return cart
-    .reduce((total, item) => {
-      const itemPrice = parseFloat(item.price);
-      const itemQuantity = item.quantity || 1;
-      if (!isNaN(itemPrice) && itemQuantity > 0) {
-        return total + itemPrice * itemQuantity;
-      }
 
-      return total;
-    }, 0)
-    .toFixed(2);
-};
 
 export default Addcart;
