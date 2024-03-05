@@ -10,7 +10,6 @@ import {
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAy6Yj-_BaLYO7BLPzv-9EdV3U6NIEJA1M",
@@ -29,8 +28,18 @@ const CommerceAuth = getAuth(CommerceApp);
 // Sign in with google
 const googleProvider = new GoogleAuthProvider();
 
-const signInWithGooglePopup = async () =>
-  await signInWithPopup(CommerceAuth, googleProvider);
+const signInWithGooglePopup = async () => {
+  try {
+    const result = await signInWithPopup(CommerceAuth, googleProvider);
+    // Handle successful sign-in
+    console.log("Google sign-in successful:", result);
+    return result;
+  } catch (error) {
+    // Handle errors
+    console.error("Error signing in with Google:", error.message);
+    throw error; // Rethrow the error to handle it elsewhere if needed
+  }
+};
 
 const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
@@ -45,7 +54,10 @@ const signInAuthUserWithEmailAndPassword = async (email, password) => {
 // firestore database
 const CommerceDb = getFirestore(CommerceApp);
 
-const createUserDocumentFromAuth = async (userAuth, additionalInformation = {})  => {
+const createUserDocumentFromAuth = async (
+  userAuth,
+  additionalInformation = {}
+) => {
   if (!userAuth) return;
   const userDocRef = doc(CommerceDb, "users", userAuth.uid);
   const userSnapShot = await getDoc(userDocRef);
@@ -58,7 +70,7 @@ const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) 
         displayName,
         email,
         createdAt,
-        ...additionalInformation
+        ...additionalInformation,
       });
     } catch (err) {
       console.log("error creating the user", err.message);
@@ -73,5 +85,5 @@ export {
   createAuthUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInAuthUserWithEmailAndPassword,
-  getStorage
+  getStorage,
 };
