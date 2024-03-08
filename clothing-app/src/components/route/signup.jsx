@@ -120,9 +120,7 @@ const Signup = () => {
           type="submit"
           className="w-full p-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
         >
-
           <NavLink to="/HomeShop"> Sign Up</NavLink>
-         
         </button>
       </form>
     </div>
